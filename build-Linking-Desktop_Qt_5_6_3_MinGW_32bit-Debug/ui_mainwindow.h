@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -27,6 +28,8 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QPushButton *pushButton;
+    QLabel *label;
+    QPushButton *pushButton_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -35,11 +38,41 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(504, 314);
+        MainWindow->setStyleSheet(QLatin1String("QMainWindow{\n"
+"	background-color: rgb(48, 48, 48);\n"
+"	\n"
+"}\n"
+"QLabel{\n"
+"	font: 75 12pt \"MS Shell Dlg 2\";\n"
+"	color: white;\n"
+"	\n"
+"}\n"
+"QGroupBox{\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"	color: white;\n"
+"	border-radius: 10px;\n"
+"	border: 2px solid rgb(220, 220, 220);\n"
+"\n"
+"}\n"
+"\n"
+""));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(200, 110, 75, 23));
+        pushButton->setGeometry(QRect(30, 190, 75, 23));
+        label = new QLabel(centralwidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(20, 20, 141, 41));
+        label->setStyleSheet(QLatin1String("QLabel{\n"
+"	color: rgb(85, 196, 255);\n"
+"\n"
+"	font: 12pt \"Comic Sans MS\";\n"
+"}"));
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(30, 70, 75, 23));
+        pushButton_2->setChecked(false);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -57,7 +90,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("MainWindow", "Ball", Q_NULLPTR));
+        label->setText(QApplication::translate("MainWindow", "Hello user.", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("MainWindow", "Tournament", Q_NULLPTR));
     } // retranslateUi
 
 };

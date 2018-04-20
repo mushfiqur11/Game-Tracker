@@ -3,11 +3,17 @@
 #include "ball.h"
 #include <QMessageBox>
 #include <iostream>
+#include <vector>
+using namespace std;
+vector<Ball>obj;
+
 
 int GLOBAL_RUN=0;
 int GLOBAL_WICKET=0;
+int G_W=0;
 int GLOBAL_OVERS=0;
 int GLOBAL_BALLS=0;
+int G_LEGAL=0;
 QTLINKING::QTLINKING(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::QTLINKING)
@@ -268,7 +274,7 @@ void QTLINKING::on_R5_clicked()
 
 void QTLINKING::on_Next_clicked()
 {
-    if(ui->LNo->isChecked()){
+    /*if(ui->LNo->isChecked()){
         GLOBAL_RUN++;
     }
     else if(ui->LWide->isChecked()){
@@ -307,5 +313,74 @@ void QTLINKING::on_Next_clicked()
     ui->Wickets->setNum(GLOBAL_WICKET);
     ui->Overs->setNum(GLOBAL_OVERS);
     ui->Balls->setNum(GLOBAL_BALLS);
+    */
+
+    //run
+    if(ui->R0->isChecked()){
+        GLOBAL_RUN=0;
+    }
+    else if(ui->R1->isChecked()){
+        GLOBAL_RUN=1;
+    }
+    else if(ui->R2->isChecked()){
+        GLOBAL_RUN=2;
+    }
+    else if(ui->R3->isChecked()){
+        GLOBAL_RUN=3;
+    }
+    else if(ui->R4->isChecked()){
+        GLOBAL_RUN=4;
+    }
+    else if(ui->R5->isChecked()){
+        GLOBAL_RUN=5;
+    }
+    else if(ui->R6->isChecked()){
+        GLOBAL_RUN=6;
+    }
+
+    //legal
+    if(ui->LLegal->isChecked()){
+        G_LEGAL=0;
+    }
+    else if(ui->LNo->isChecked()){
+        G_LEGAL=1;
+    }
+    else if(ui->LWide->isChecked()){
+        G_LEGAL=2;
+    }
+
+    //wicket
+    if(ui->WNotout->isChecked()){
+        G_W=0;
+    }
+    else if(ui->WBowled->isChecked()){
+        G_W=1;
+    }
+    else if(ui->WCatch->isChecked()){
+        G_W=2;
+    }
+    else if(ui->WLbw->isChecked()){
+        G_W=3;
+    }
+    else if(ui->WStumped->isChecked()){
+        G_W=4;
+    }
+    else if(ui->WRunout->isChecked()){
+        G_W=5;
+    }
+    else if(ui->WHitwicket->isChecked()){
+        G_W=6;
+    }
+
+    //extra
+
+
+
+    obj.push_back(Ball(GLOBAL_BALLS));
+    obj[GLOBAL_BALLS].setValue(GLOBAL_RUN,G_LEGAL);
+    GLOBAL_BALLS++;
+
 
 }
+
+

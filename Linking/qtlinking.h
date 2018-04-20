@@ -52,6 +52,8 @@ private slots:
 
     void on_Next_clicked();
 
+    void on_Previous_clicked();
+
 private:
     Ui::QTLINKING *ui;
 };

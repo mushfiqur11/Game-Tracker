@@ -13,18 +13,74 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+	background-color: rgb(48, 48, 48);
+	
+}
+QLabel{
+	font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	
+}
+QGroupBox{
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+	color: white;
+	border-radius: 10px;
+	border: 2px solid rgb(220, 220, 220);
+
+}
+
+</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>110</y>
+      <x>30</x>
+      <y>190</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Ball</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	color: rgb(85, 196, 255);
+
+	font: 12pt &quot;Comic Sans MS&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>Hello user.</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tournament</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
     </property>
    </widget>
   </widget>
