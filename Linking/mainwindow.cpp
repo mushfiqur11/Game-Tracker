@@ -20,3 +20,9 @@ void MainWindow::on_pushButton_clicked()
     n->show();
     this->hide();
 }
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    ui->label->setStyleSheet("QPushButton{color:white}");
+    //this->hide();
+}

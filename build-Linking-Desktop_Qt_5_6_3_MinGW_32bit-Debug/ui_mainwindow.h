@@ -60,10 +60,10 @@ public:
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(30, 190, 75, 23));
+        pushButton->setGeometry(QRect(124, 70, 341, 161));
         label = new QLabel(centralwidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(20, 20, 141, 41));
+        label->setGeometry(QRect(150, 20, 141, 41));
         label->setStyleSheet(QLatin1String("QLabel{\n"
 "	color: rgb(85, 196, 255);\n"
 "\n"
@@ -71,7 +71,7 @@ public:
 "}"));
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(30, 70, 75, 23));
+        pushButton_2->setGeometry(QRect(30, 70, 75, 161));
         pushButton_2->setChecked(false);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);

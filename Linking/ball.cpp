@@ -1,15 +1,15 @@
 #include "ball.h"
-
-Ball::Ball(int BallNo){
-    ballNo=BallNo%30;
-    overNo=BallNo/30;
+Ball::Ball(){
+    ballNo=0;
+    overNo=0;
 }
 
-void Ball::setValues(int Run,int Wicket,int Legal,int Extra,int Batsman,int NBatsman,int Bowler){
-    run = Run;
-    wicket=Wicket;
-    legal=Legal;
-    extra=Extra;
+Ball::Ball(int TBall,int TI){
+    ballNo=((TBall-TI)%6)+1;
+    overNo=(TBall-TI)/6;
+}
+
+void Ball::setValues(int Batsman,int NBatsman,int Bowler){
     batsman=Batsman;
     Nbatsman=NBatsman;
     bowler=Bowler;
@@ -20,6 +20,18 @@ void Ball::setValue(int Run,int Wicket,int Legal,int Extra){
     wicket=Wicket;
     legal=Legal;
     extra=Extra;
+}
+
+void Ball::setBall(int BallNo,int OverNo){
+    //ball
+}
+
+int Ball::getOverNo(){
+    return overNo;
+}
+
+int Ball::getBallNo(){
+    return ballNo;
 }
 
 int Ball::getRun(){

@@ -37,10 +37,10 @@ QGroupBox{
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>190</y>
-      <width>75</width>
-      <height>23</height>
+      <x>124</x>
+      <y>70</y>
+      <width>341</width>
+      <height>161</height>
      </rect>
     </property>
     <property name="text">
@@ -50,7 +50,7 @@ QGroupBox{
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>150</x>
       <y>20</y>
       <width>141</width>
       <height>41</height>
@@ -73,7 +73,7 @@ QGroupBox{
       <x>30</x>
       <y>70</y>
       <width>75</width>
-      <height>23</height>
+      <height>161</height>
      </rect>
     </property>
     <property name="text">

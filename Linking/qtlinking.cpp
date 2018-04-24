@@ -4,16 +4,21 @@
 #include <QMessageBox>
 #include <iostream>
 #include <vector>
+#include<string>
+
 using namespace std;
 vector<Ball>obj;
 
 
-int GLOBAL_RUN=0;
+int G_R=0;
 int GLOBAL_WICKET=0;
 int G_W=0;
+int G_C=0;
 int GLOBAL_OVERS=0;
 int GLOBAL_BALLS=0;
-int G_LEGAL=0;
+int G_L=0;
+int G_E=0;
+int PGB=0;
 QTLINKING::QTLINKING(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::QTLINKING)
@@ -274,82 +279,44 @@ void QTLINKING::on_R5_clicked()
 
 void QTLINKING::on_Next_clicked()
 {
-    /*if(ui->LNo->isChecked()){
-        GLOBAL_RUN++;
-    }
-    else if(ui->LWide->isChecked()){
-        GLOBAL_RUN++;
-    }
-    else if(ui->LLegal->isChecked()){
-        GLOBAL_BALLS++;
-        if(GLOBAL_BALLS==6){
-            GLOBAL_BALLS=0;
-            GLOBAL_OVERS++;
-        }
-    }
-    if(!ui->WNotout->isChecked()){
-        GLOBAL_WICKET++;
-    }
-    if(ui->R1->isChecked()){
-        GLOBAL_RUN++;
-    }
-    else if(ui->R2->isChecked()){
-        GLOBAL_RUN+=2;
-    }
-    else if(ui->R3->isChecked()){
-        GLOBAL_RUN+=3;
-    }
-    else if(ui->R4->isChecked()){
-        GLOBAL_RUN+=4;
-    }
-    else if(ui->R5->isChecked()){
-        GLOBAL_RUN+=5;
-    }
-    else if(ui->R6->isChecked()){
-        GLOBAL_RUN+=6;
-    }
-    //std::string s="Team 1: "+GLOBAL_RUN+"/"+GLOBAL_WICKET+"    "+GLOBAL_OVERS+"."+GLOBAL_BALLS;
-    ui->Runs->setNum(GLOBAL_RUN);
-    ui->Wickets->setNum(GLOBAL_WICKET);
-    ui->Overs->setNum(GLOBAL_OVERS);
-    ui->Balls->setNum(GLOBAL_BALLS);
-    */
-
     //run
+    {
     if(ui->R0->isChecked()){
-        GLOBAL_RUN=0;
+        G_R=0;
     }
     else if(ui->R1->isChecked()){
-        GLOBAL_RUN=1;
+        G_R=1;
     }
     else if(ui->R2->isChecked()){
-        GLOBAL_RUN=2;
+        G_R=2;
     }
     else if(ui->R3->isChecked()){
-        GLOBAL_RUN=3;
+        G_R=3;
     }
     else if(ui->R4->isChecked()){
-        GLOBAL_RUN=4;
+        G_R=4;
     }
     else if(ui->R5->isChecked()){
-        GLOBAL_RUN=5;
+        G_R=5;
     }
     else if(ui->R6->isChecked()){
-        GLOBAL_RUN=6;
+        G_R=6;
     }
-
+    }
     //legal
+    {
     if(ui->LLegal->isChecked()){
-        G_LEGAL=0;
+        G_L=0;
     }
     else if(ui->LNo->isChecked()){
-        G_LEGAL=1;
+        G_L=1;
     }
     else if(ui->LWide->isChecked()){
-        G_LEGAL=2;
+        G_L=2;
     }
-
+    }
     //wicket
+    {
     if(ui->WNotout->isChecked()){
         G_W=0;
     }
@@ -371,16 +338,95 @@ void QTLINKING::on_Next_clicked()
     else if(ui->WHitwicket->isChecked()){
         G_W=6;
     }
-
+    }
     //extra
+    {
+    if(ui->EDefault->isChecked()){
+        G_E=0;
+    }
+    else if(ui->EBye->isChecked()){
+        G_E=1;
+    }
+    else if(ui->ELegbye->isChecked()){
+        G_E=2;
+    }
+
+    }
 
 
 
-    obj.push_back(Ball(GLOBAL_BALLS));
-    obj[GLOBAL_BALLS].setValue(GLOBAL_RUN,G_LEGAL);
+    /*
+    if(ui->LNo->isChecked()){
+        G_R++;
+    }
+    else if(ui->LWide->isChecked()){
+        G_R++;
+    }
+    else if(ui->LLegal->isChecked()){
+        GLOBAL_BALLS++;
+        if(GLOBAL_BALLS==6){
+            GLOBAL_BALLS=0;
+            GLOBAL_OVERS++;
+        }
+    }
+    if(!ui->WNotout->isChecked()){
+        GLOBAL_WICKET++;
+    }
+    if(ui->R1->isChecked()){
+        G_R++;
+    }
+    else if(ui->R2->isChecked()){
+        G_R+=2;
+    }
+    else if(ui->R3->isChecked()){
+        G_R+=3;
+    }
+    else if(ui->R4->isChecked()){
+        G_R+=4;
+    }
+    else if(ui->R5->isChecked()){
+        G_R+=5;
+    }
+    else if(ui->R6->isChecked()){
+        G_R+=6;
+    }
+    //std::string s="Team 1: "+G_R+"/"+GLOBAL_WICKET+"    "+GLOBAL_OVERS+"."+GLOBAL_BALLS;
+    ui->Runs->setNum(G_R);
+    ui->Wickets->setNum(GLOBAL_WICKET);
+    ui->Overs->setNum(GLOBAL_OVERS);
+    ui->Balls->setNum(GLOBAL_BALLS);
+
+    */
+
+
+    if(G_L>0)G_C++;
+    obj.push_back(Ball(GLOBAL_BALLS,G_C));
+    obj[GLOBAL_BALLS].setValue(G_R,G_W,G_L,G_E);
+
+    PGB=GLOBAL_BALLS;
     GLOBAL_BALLS++;
 
+    QString s=ui->Runs->text();
 
+
+    bool ok;
+    int ER=0;
+    if(obj[PGB].getLegal()>0){
+        ER=1;
+    }
+    int RR= s.toInt(&ok)+obj[PGB].getRun()+ER;
+    ui->Runs->setNum(RR);
+    cout<<obj[PGB].getBallNo()<<" "<<obj[PGB].getOverNo()<<endl;
+
+    QString w=ui->Wickets->text();
+
+    int WW=w.toInt(&ok);
+    if(obj[PGB].getWicket())
+        WW++;
+    ui->Wickets->setNum(WW);
+
+    ui->Overs->setNum(obj[PGB].getOverNo());
+    ui->Balls->setNum(obj[PGB].getBallNo());
 }
 
 
