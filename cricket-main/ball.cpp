@@ -1,7 +1,7 @@
 #include "ball.h"
 
 Ball::Ball(int BallG,int BallC){
-    ballNo=(BallG-BallC)%6;
+    ballNo=((BallG-BallC)%6);
     overNo=(BallG-BallC)/6;
 }
 
@@ -28,7 +28,7 @@ void Ball::setValue(int Run,int Wicket,int Legal,int Extra){
 }
 
 int Ball::getBall(){
-    return ballNo;
+    return ballNo+1;
 }
 
 int Ball::getOver(){

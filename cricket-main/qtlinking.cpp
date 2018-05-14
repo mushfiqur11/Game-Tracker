@@ -13,18 +13,19 @@ int G_R=0;
 int GLOBAL_WICKET=0;
 int G_W=0;
 int GLOBAL_OVERS=0;
-int GLOBAL_BALLS=0;
+int GLOBAL_BALLS=1;
 int G_L=0;
 int G_E=0;
-int PGB=0;
-int G_C=0;
+int PGB=1;
+int G_C=1;
 int Prev=0;
 qtlinking::qtlinking(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::qtlinking)
 {
     ui->setupUi(this);
-    //connect(ui->horizontalSlider,SIGNAL(valueChanged(int)),ui->progressBar,SLOT(setValue(int)));
+    obj.push_back(Ball(-1,-1));
+    obj[0].setValue(0,0,0,0);
 }
 
 qtlinking::~qtlinking()
@@ -208,6 +209,9 @@ void qtlinking::on_WHitwicket_clicked()
 
 void qtlinking::on_WRunout_clicked()
 {
+    if(ui->R6->isChecked()||ui->R5->isChecked()){
+        ui->R0->setChecked(true);
+    }
     ui->R0->setEnabled(true);
     ui->R1->setEnabled(true);
     ui->R2->setEnabled(true);
@@ -280,10 +284,10 @@ void qtlinking::on_R5_clicked()
 void qtlinking::on_Next_clicked()
 {
 
-    if(GLOBAL_BALLS>=1)
+    if(GLOBAL_BALLS>=2)
         ui->Previous->setEnabled(true);
 
-
+    {
     //run
     if(ui->R0->isChecked()){
         G_R=0;
@@ -351,24 +355,27 @@ void qtlinking::on_Next_clicked()
     else if(ui->ELegbye->isChecked()){
         G_E=2;
     }
-
-
+    }
+    //cout<<G_R<<" "<<G_W<<" "<<G_L<<" "<<G_E<<endl;
     if(Prev==0){
         if(G_L!=0){
             G_C++;
         }
-        obj.push_back(Ball(GLOBAL_BALLS,G_C));
+
+        //cout<<"GB="<<GLOBAL_BALLS<<"  GC="<<G_C<<endl;
+        obj.push_back(Ball(GLOBAL_BALLS-1,G_C-1));
         PGB=GLOBAL_BALLS;
         GLOBAL_BALLS++;
+        //cout<<obj[PGB].getBall()<<" "<<obj[PGB].getOver()<<endl;
     }
     else if(Prev==1){
         if(obj[PGB].getLegal()==0&&G_L!=0){
             G_C++;
-            obj[PGB].setBall(GLOBAL_BALLS,G_C);
+            obj[PGB].setBall(GLOBAL_BALLS-1,G_C-1);
         }
         else if(obj[PGB].getLegal()>0&&G_L==0){
             G_C--;
-            obj[PGB].setBall(GLOBAL_BALLS,G_C);
+            obj[PGB].setBall(GLOBAL_BALLS-1,G_C-1);
         }
     }
 
@@ -389,13 +396,13 @@ void qtlinking::on_Next_clicked()
     int RR=s.toInt(&ok);
     ui->Runs->setNum(RR+obj[PGB].getRun()+G_L);
 
-    if(obj[PGB].getBall()==5){
+    if(obj[PGB].getBall()==6){
         ui->Overs->setNum(obj[PGB].getOver()+1);
         ui->Balls->setNum(0);
     }
     else{
         ui->Overs->setNum(obj[PGB].getOver());
-        ui->Balls->setNum(obj[PGB].getBall()+1);
+        ui->Balls->setNum(obj[PGB].getBall());
     }
 
 
@@ -403,6 +410,7 @@ void qtlinking::on_Next_clicked()
     int i=PGB;
     ui->this_over->setText("");
     while(1){
+        //cout<<i<<" S "<<obj[i].getBall()<<" "<<obj[i-1].getBall()<<endl;
         QString ll="";
         if(obj[i].getLegal()==1)
             ll="wd";
@@ -414,9 +422,10 @@ void qtlinking::on_Next_clicked()
         else if(obj[i].getExtra()==2)
             ee="lb";
 
-
         QString ww="";
+
         if(obj[i].getWicket()>0){
+
             ww="Wkt";
             if(obj[i].getRun()==0&&obj[i].getLegal()==0)
                 ui->this_over->setText(ui->this_over->text()+ww+"  ");
@@ -425,54 +434,20 @@ void qtlinking::on_Next_clicked()
 
         }
         else{
+
             ll=ll+"  ";
             ui->this_over->setText(ui->this_over->text()+QVariant(obj[i].getRun()).toString()+ee+ll);
         }
-        /*
-        QString b=ui->Balls->text();
-        int B=b.toInt(&ok);
-        QString o=ui->Overs->text();
-        int O=o.toInt(&ok);
-        if(B==0&&O!=0){
-            ui->this_over->setText(" | "+ ui->this_over->text());
+        if(obj[i-1].getLegal()!=0){
+            i--;
+            continue;
         }
-        */
-        if(obj[i].getBall()==0)
+        else if((obj[i].getBall()==1 && obj[i-1].getBall()!=obj[i].getBall())||(obj[i-1].getBall()==6 && (obj[i-1].getLegal()==0))||i==1)
             break;
         else
             i--;
     }
 
-    /*
-    int i=PGB;
-    ui->this_over->setText("");
-    while(1){
-        QString ll="";
-        QString ww="";
-        QString ee="";
-        QString rr="";
-        if(rr[0]!='0')
-            rr=QVariant(obj[i].getRun()).toString();
-
-        //ll def
-        if(obj[i].getLegal()==1)
-            ll="wd";
-        else if(obj[i].getLegal()==2)
-            ll="no";
-
-        //ww def
-        if(obj[i].getWicket()>0){
-            ww="Wkt";
-
-        //ee def
-        if(obj[i].getExtra()==1)
-            ee="b";
-        else if(obj[i].getExtra()==2)
-            ee="lb";
-
-        ui->this_over->setText("");
-    }
-    */
     Prev=0;
 }
 
@@ -480,7 +455,7 @@ void qtlinking::on_Next_clicked()
 
 void qtlinking::on_Previous_clicked()
 {
-    //int Rp,Lp,Wp,Ep;
+
     Prev=1;
     ui->Previous->setDisabled(true);
     switch(obj[PGB].getRun()){
@@ -564,13 +539,13 @@ void qtlinking::on_Previous_clicked()
     ui->Runs->setNum(RR-obj[PGB].getRun()-G_L);
 
 
-    if(obj[PGB-1].getBall()==5){
-        ui->Overs->setNum(obj[PGB-1].getOver()+1);
+    if(obj[PGB].getBall()==6){
+        ui->Overs->setNum(obj[PGB].getOver()+1);
         ui->Balls->setNum(0);
     }
     else{
-        ui->Overs->setNum(obj[PGB-1].getOver());
-        ui->Balls->setNum(obj[PGB-1].getBall()+1);
+        ui->Overs->setNum(obj[PGB].getOver());
+        ui->Balls->setNum(obj[PGB].getBall());
     }
 
 
@@ -588,3 +563,4 @@ void qtlinking::on_Reset_clicked()
     ui->EDefault->setEnabled(true);
     ui->EDefault->setChecked(true);
 }
+//one unresolved bug. illegal>previous>legal. ball count wrong.

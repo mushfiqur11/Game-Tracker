@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\ball.o
+./release\qtlinking.o
+./release\player.o
+./release\team.o
+./release\innings.o
+./release\qrc_icon.o
+./release\qrc_images.o
+./release\moc_mainwindow.o
+./release\moc_qtlinking.o
+);

@@ -14,18 +14,23 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
+    ball.cpp \
     qtlinking.cpp \
-    ball.cpp
+    player.cpp \
+    team.cpp
 
 HEADERS  += mainwindow.h \
+    ball.h \
     qtlinking.h \
-    ball.h
+    player.h \
+    team.h
 
 FORMS    += mainwindow.ui \
     qtlinking.ui
 
 RESOURCES += \
-    icon.qrc
+    icon.qrc \
+    images.qrc
 
 RC_FILE += \
     icon.rc

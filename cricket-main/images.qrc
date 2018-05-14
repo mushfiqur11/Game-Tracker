@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>bat.png</file>
+        <file>Wicket-M.jpg</file>
+    </qresource>
+</RCC>

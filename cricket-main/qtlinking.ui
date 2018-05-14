@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>490</width>
-    <height>533</height>
+    <width>488</width>
+    <height>568</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -142,20 +142,25 @@ QGroupBox{
       <zorder>horizontalSpacer_5</zorder>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QGroupBox" name="Legal">
+    <item row="2" column="6">
+     <widget class="QGroupBox" name="Extra">
       <property name="minimumSize">
        <size>
         <width>95</width>
         <height>258</height>
        </size>
       </property>
-      <property name="title">
-       <string>Legal</string>
+      <property name="styleSheet">
+       <string notr="true">QTLINKING{
+background: black;
+}</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
+      <property name="title">
+       <string>Extra</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QPushButton" name="LLegal">
+        <widget class="QPushButton" name="EDefault">
          <property name="minimumSize">
           <size>
            <width>75</width>
@@ -166,7 +171,7 @@ QGroupBox{
           <bool>true</bool>
          </property>
          <property name="text">
-          <string>Legal</string>
+          <string>Default</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -183,64 +188,63 @@ QGroupBox{
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="LWide">
+        <widget class="QPushButton" name="ELegbye">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="minimumSize">
           <size>
            <width>75</width>
            <height>23</height>
           </size>
          </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
-          <string>Wide</string>
+          <string>Leg bye</string>
          </property>
          <property name="shortcut">
-          <string>W</string>
+          <string>L</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
          </property>
          <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
           <bool>true</bool>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="LNo">
+        <widget class="QPushButton" name="EBye">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
          <property name="text">
-          <string>No</string>
+          <string>Bye</string>
          </property>
          <property name="shortcut">
-          <string>N</string>
+          <string>B</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
          </property>
          <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
           <bool>true</bool>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
-    </item>
-    <item row="2" column="1">
-     <spacer name="horizontalSpacer">
-      <property name="minimumSize">
-       <size>
-        <width>18</width>
-        <height>258</height>
-       </size>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>15</width>
-        <height>255</height>
-       </size>
-      </property>
-     </spacer>
     </item>
     <item row="2" column="2">
      <widget class="QGroupBox" name="Wicket">
@@ -423,24 +427,137 @@ QGroupBox{
       </layout>
      </widget>
     </item>
-    <item row="2" column="3">
-     <spacer name="horizontalSpacer_2">
+    <item row="3" column="0" colspan="7">
+     <widget class="QGroupBox" name="Buttons">
+      <property name="title">
+       <string/>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QPushButton" name="Next">
+         <property name="text">
+          <string>Next Ball</string>
+         </property>
+         <property name="shortcut">
+          <string>Enter</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="default">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Reset">
+         <property name="text">
+          <string>Reset</string>
+         </property>
+         <property name="shortcut">
+          <string>R</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Previous">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Previous Ball</string>
+         </property>
+         <property name="shortcut">
+          <string>P</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QGroupBox" name="Legal">
       <property name="minimumSize">
        <size>
-        <width>18</width>
+        <width>95</width>
         <height>258</height>
        </size>
       </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+      <property name="title">
+       <string>Legal</string>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>15</width>
-        <height>255</height>
-       </size>
-      </property>
-     </spacer>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QPushButton" name="LLegal">
+         <property name="minimumSize">
+          <size>
+           <width>75</width>
+           <height>23</height>
+          </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Legal</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="LWide">
+         <property name="minimumSize">
+          <size>
+           <width>75</width>
+           <height>23</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Wide</string>
+         </property>
+         <property name="shortcut">
+          <string>W</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="LNo">
+         <property name="text">
+          <string>No</string>
+         </property>
+         <property name="shortcut">
+          <string>N</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </item>
     <item row="2" column="4">
      <widget class="QGroupBox" name="Run">
@@ -669,155 +786,75 @@ QGroupBox{
       </property>
      </spacer>
     </item>
-    <item row="2" column="6">
-     <widget class="QGroupBox" name="Extra">
+    <item row="1" column="0">
+     <widget class="QLabel" name="over_text">
+      <property name="text">
+       <string>This over:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <spacer name="horizontalSpacer">
       <property name="minimumSize">
        <size>
-        <width>95</width>
+        <width>18</width>
         <height>258</height>
        </size>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QTLINKING{
-background: black;
-}</string>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
-      <property name="title">
-       <string>Extra</string>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>15</width>
+        <height>255</height>
+       </size>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="QPushButton" name="EDefault">
-         <property name="minimumSize">
-          <size>
-           <width>75</width>
-           <height>23</height>
-          </size>
-         </property>
-         <property name="autoFillBackground">
-          <bool>true</bool>
-         </property>
-         <property name="text">
-          <string>Default</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="ELegbye">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>75</width>
-           <height>23</height>
-          </size>
-         </property>
-         <property name="autoFillBackground">
-          <bool>true</bool>
-         </property>
-         <property name="text">
-          <string>Leg bye</string>
-         </property>
-         <property name="shortcut">
-          <string>L</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="EBye">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="autoFillBackground">
-          <bool>true</bool>
-         </property>
-         <property name="text">
-          <string>Bye</string>
-         </property>
-         <property name="shortcut">
-          <string>B</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
+     </spacer>
     </item>
-    <item row="3" column="0" colspan="7">
-     <widget class="QGroupBox" name="Buttons">
+    <item row="2" column="3">
+     <spacer name="horizontalSpacer_2">
+      <property name="minimumSize">
+       <size>
+        <width>18</width>
+        <height>258</height>
+       </size>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>15</width>
+        <height>255</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="4" column="0" colspan="7">
+     <widget class="QGroupBox" name="groupBox">
       <property name="title">
        <string/>
       </property>
-      <property name="flat">
-       <bool>false</bool>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QPushButton" name="Next">
+        <widget class="QPushButton" name="pushButton">
          <property name="text">
-          <string>Next Ball</string>
-         </property>
-         <property name="shortcut">
-          <string>Enter</string>
-         </property>
-         <property name="checkable">
-          <bool>false</bool>
-         </property>
-         <property name="default">
-          <bool>true</bool>
+          <string>Change Bowler</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="Reset">
+        <widget class="QPushButton" name="pushButton_2">
          <property name="text">
-          <string>Reset</string>
-         </property>
-         <property name="shortcut">
-          <string>R</string>
+          <string>Change Batsman</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="Previous">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
+        <widget class="QPushButton" name="pushButton_3">
          <property name="text">
-          <string>Previous Ball</string>
-         </property>
-         <property name="shortcut">
-          <string>P</string>
+          <string>Rotate Strike</string>
          </property>
         </widget>
        </item>
@@ -842,13 +879,6 @@ background: black;
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="over_text">
-      <property name="text">
-       <string>This over:</string>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -856,7 +886,7 @@ background: black;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>490</width>
+     <width>488</width>
      <height>21</height>
     </rect>
    </property>

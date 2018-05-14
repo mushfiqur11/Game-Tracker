@@ -45,12 +45,11 @@ public:
     QLabel *label_2;
     QLabel *Balls;
     QLabel *label_3;
-    QGroupBox *Legal;
-    QVBoxLayout *verticalLayout_4;
-    QPushButton *LLegal;
-    QPushButton *LWide;
-    QPushButton *LNo;
-    QSpacerItem *horizontalSpacer;
+    QGroupBox *Extra;
+    QVBoxLayout *verticalLayout_2;
+    QPushButton *EDefault;
+    QPushButton *ELegbye;
+    QPushButton *EBye;
     QGroupBox *Wicket;
     QVBoxLayout *verticalLayout_3;
     QPushButton *WNotout;
@@ -60,7 +59,16 @@ public:
     QPushButton *WStumped;
     QPushButton *WRunout;
     QPushButton *WHitwicket;
-    QSpacerItem *horizontalSpacer_2;
+    QGroupBox *Buttons;
+    QVBoxLayout *verticalLayout_5;
+    QPushButton *Next;
+    QPushButton *Reset;
+    QPushButton *Previous;
+    QGroupBox *Legal;
+    QVBoxLayout *verticalLayout_4;
+    QPushButton *LLegal;
+    QPushButton *LWide;
+    QPushButton *LNo;
     QGroupBox *Run;
     QVBoxLayout *verticalLayout;
     QPushButton *R0;
@@ -71,18 +79,15 @@ public:
     QPushButton *R5;
     QPushButton *R6;
     QSpacerItem *horizontalSpacer_3;
-    QGroupBox *Extra;
-    QVBoxLayout *verticalLayout_2;
-    QPushButton *EDefault;
-    QPushButton *ELegbye;
-    QPushButton *EBye;
-    QGroupBox *Buttons;
-    QVBoxLayout *verticalLayout_5;
-    QPushButton *Next;
-    QPushButton *Reset;
-    QPushButton *Previous;
-    QLabel *this_over;
     QLabel *over_text;
+    QSpacerItem *horizontalSpacer;
+    QSpacerItem *horizontalSpacer_2;
+    QGroupBox *groupBox;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
+    QLabel *this_over;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -90,7 +95,7 @@ public:
     {
         if (qtlinking->objectName().isEmpty())
             qtlinking->setObjectName(QStringLiteral("qtlinking"));
-        qtlinking->resize(490, 533);
+        qtlinking->resize(488, 568);
         qtlinking->setStyleSheet(QLatin1String("QMainWindow{\n"
 "	background-color: rgb(48, 48, 48);\n"
 "	\n"
@@ -177,43 +182,48 @@ public:
 
         gridLayout->addWidget(TextBox, 0, 0, 1, 7);
 
-        Legal = new QGroupBox(centralwidget);
-        Legal->setObjectName(QStringLiteral("Legal"));
-        Legal->setMinimumSize(QSize(95, 258));
-        verticalLayout_4 = new QVBoxLayout(Legal);
-        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        LLegal = new QPushButton(Legal);
-        LLegal->setObjectName(QStringLiteral("LLegal"));
-        LLegal->setMinimumSize(QSize(75, 23));
-        LLegal->setAutoFillBackground(true);
-        LLegal->setCheckable(true);
-        LLegal->setChecked(true);
-        LLegal->setAutoExclusive(true);
-        LLegal->setAutoDefault(true);
+        Extra = new QGroupBox(centralwidget);
+        Extra->setObjectName(QStringLiteral("Extra"));
+        Extra->setMinimumSize(QSize(95, 258));
+        Extra->setStyleSheet(QLatin1String("QTLINKING{\n"
+"background: black;\n"
+"}"));
+        verticalLayout_2 = new QVBoxLayout(Extra);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        EDefault = new QPushButton(Extra);
+        EDefault->setObjectName(QStringLiteral("EDefault"));
+        EDefault->setMinimumSize(QSize(75, 23));
+        EDefault->setAutoFillBackground(true);
+        EDefault->setCheckable(true);
+        EDefault->setChecked(true);
+        EDefault->setAutoExclusive(true);
+        EDefault->setAutoDefault(true);
 
-        verticalLayout_4->addWidget(LLegal);
+        verticalLayout_2->addWidget(EDefault);
 
-        LWide = new QPushButton(Legal);
-        LWide->setObjectName(QStringLiteral("LWide"));
-        LWide->setMinimumSize(QSize(75, 23));
-        LWide->setCheckable(true);
-        LWide->setAutoExclusive(true);
+        ELegbye = new QPushButton(Extra);
+        ELegbye->setObjectName(QStringLiteral("ELegbye"));
+        ELegbye->setEnabled(false);
+        ELegbye->setMinimumSize(QSize(75, 23));
+        ELegbye->setAutoFillBackground(true);
+        ELegbye->setCheckable(true);
+        ELegbye->setAutoExclusive(true);
+        ELegbye->setAutoDefault(true);
 
-        verticalLayout_4->addWidget(LWide);
+        verticalLayout_2->addWidget(ELegbye);
 
-        LNo = new QPushButton(Legal);
-        LNo->setObjectName(QStringLiteral("LNo"));
-        LNo->setCheckable(true);
-        LNo->setAutoExclusive(true);
+        EBye = new QPushButton(Extra);
+        EBye->setObjectName(QStringLiteral("EBye"));
+        EBye->setEnabled(false);
+        EBye->setAutoFillBackground(true);
+        EBye->setCheckable(true);
+        EBye->setAutoExclusive(true);
+        EBye->setAutoDefault(true);
 
-        verticalLayout_4->addWidget(LNo);
+        verticalLayout_2->addWidget(EBye);
 
 
-        gridLayout->addWidget(Legal, 2, 0, 1, 1);
-
-        horizontalSpacer = new QSpacerItem(15, 255, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer, 2, 1, 1, 1);
+        gridLayout->addWidget(Extra, 2, 6, 1, 1);
 
         Wicket = new QGroupBox(centralwidget);
         Wicket->setObjectName(QStringLiteral("Wicket"));
@@ -290,9 +300,64 @@ public:
 
         gridLayout->addWidget(Wicket, 2, 2, 1, 1);
 
-        horizontalSpacer_2 = new QSpacerItem(15, 255, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        Buttons = new QGroupBox(centralwidget);
+        Buttons->setObjectName(QStringLiteral("Buttons"));
+        Buttons->setFlat(false);
+        verticalLayout_5 = new QVBoxLayout(Buttons);
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        Next = new QPushButton(Buttons);
+        Next->setObjectName(QStringLiteral("Next"));
+        Next->setCheckable(false);
 
-        gridLayout->addItem(horizontalSpacer_2, 2, 3, 1, 1);
+        verticalLayout_5->addWidget(Next);
+
+        Reset = new QPushButton(Buttons);
+        Reset->setObjectName(QStringLiteral("Reset"));
+
+        verticalLayout_5->addWidget(Reset);
+
+        Previous = new QPushButton(Buttons);
+        Previous->setObjectName(QStringLiteral("Previous"));
+        Previous->setEnabled(false);
+
+        verticalLayout_5->addWidget(Previous);
+
+
+        gridLayout->addWidget(Buttons, 3, 0, 1, 7);
+
+        Legal = new QGroupBox(centralwidget);
+        Legal->setObjectName(QStringLiteral("Legal"));
+        Legal->setMinimumSize(QSize(95, 258));
+        verticalLayout_4 = new QVBoxLayout(Legal);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        LLegal = new QPushButton(Legal);
+        LLegal->setObjectName(QStringLiteral("LLegal"));
+        LLegal->setMinimumSize(QSize(75, 23));
+        LLegal->setAutoFillBackground(true);
+        LLegal->setCheckable(true);
+        LLegal->setChecked(true);
+        LLegal->setAutoExclusive(true);
+        LLegal->setAutoDefault(true);
+
+        verticalLayout_4->addWidget(LLegal);
+
+        LWide = new QPushButton(Legal);
+        LWide->setObjectName(QStringLiteral("LWide"));
+        LWide->setMinimumSize(QSize(75, 23));
+        LWide->setCheckable(true);
+        LWide->setAutoExclusive(true);
+
+        verticalLayout_4->addWidget(LWide);
+
+        LNo = new QPushButton(Legal);
+        LNo->setObjectName(QStringLiteral("LNo"));
+        LNo->setCheckable(true);
+        LNo->setAutoExclusive(true);
+
+        verticalLayout_4->addWidget(LNo);
+
+
+        gridLayout->addWidget(Legal, 2, 0, 1, 1);
 
         Run = new QGroupBox(centralwidget);
         Run->setObjectName(QStringLiteral("Run"));
@@ -376,73 +441,40 @@ public:
 
         gridLayout->addItem(horizontalSpacer_3, 2, 5, 1, 1);
 
-        Extra = new QGroupBox(centralwidget);
-        Extra->setObjectName(QStringLiteral("Extra"));
-        Extra->setMinimumSize(QSize(95, 258));
-        Extra->setStyleSheet(QLatin1String("QTLINKING{\n"
-"background: black;\n"
-"}"));
-        verticalLayout_2 = new QVBoxLayout(Extra);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        EDefault = new QPushButton(Extra);
-        EDefault->setObjectName(QStringLiteral("EDefault"));
-        EDefault->setMinimumSize(QSize(75, 23));
-        EDefault->setAutoFillBackground(true);
-        EDefault->setCheckable(true);
-        EDefault->setChecked(true);
-        EDefault->setAutoExclusive(true);
-        EDefault->setAutoDefault(true);
+        over_text = new QLabel(centralwidget);
+        over_text->setObjectName(QStringLiteral("over_text"));
 
-        verticalLayout_2->addWidget(EDefault);
+        gridLayout->addWidget(over_text, 1, 0, 1, 1);
 
-        ELegbye = new QPushButton(Extra);
-        ELegbye->setObjectName(QStringLiteral("ELegbye"));
-        ELegbye->setEnabled(false);
-        ELegbye->setMinimumSize(QSize(75, 23));
-        ELegbye->setAutoFillBackground(true);
-        ELegbye->setCheckable(true);
-        ELegbye->setAutoExclusive(true);
-        ELegbye->setAutoDefault(true);
+        horizontalSpacer = new QSpacerItem(15, 255, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        verticalLayout_2->addWidget(ELegbye);
+        gridLayout->addItem(horizontalSpacer, 2, 1, 1, 1);
 
-        EBye = new QPushButton(Extra);
-        EBye->setObjectName(QStringLiteral("EBye"));
-        EBye->setEnabled(false);
-        EBye->setAutoFillBackground(true);
-        EBye->setCheckable(true);
-        EBye->setAutoExclusive(true);
-        EBye->setAutoDefault(true);
+        horizontalSpacer_2 = new QSpacerItem(15, 255, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        verticalLayout_2->addWidget(EBye);
+        gridLayout->addItem(horizontalSpacer_2, 2, 3, 1, 1);
+
+        groupBox = new QGroupBox(centralwidget);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        horizontalLayout_2 = new QHBoxLayout(groupBox);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        pushButton = new QPushButton(groupBox);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        horizontalLayout_2->addWidget(pushButton);
+
+        pushButton_2 = new QPushButton(groupBox);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+
+        horizontalLayout_2->addWidget(pushButton_2);
+
+        pushButton_3 = new QPushButton(groupBox);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+
+        horizontalLayout_2->addWidget(pushButton_3);
 
 
-        gridLayout->addWidget(Extra, 2, 6, 1, 1);
-
-        Buttons = new QGroupBox(centralwidget);
-        Buttons->setObjectName(QStringLiteral("Buttons"));
-        Buttons->setFlat(false);
-        verticalLayout_5 = new QVBoxLayout(Buttons);
-        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
-        Next = new QPushButton(Buttons);
-        Next->setObjectName(QStringLiteral("Next"));
-        Next->setCheckable(false);
-
-        verticalLayout_5->addWidget(Next);
-
-        Reset = new QPushButton(Buttons);
-        Reset->setObjectName(QStringLiteral("Reset"));
-
-        verticalLayout_5->addWidget(Reset);
-
-        Previous = new QPushButton(Buttons);
-        Previous->setObjectName(QStringLiteral("Previous"));
-        Previous->setEnabled(false);
-
-        verticalLayout_5->addWidget(Previous);
-
-
-        gridLayout->addWidget(Buttons, 3, 0, 1, 7);
+        gridLayout->addWidget(groupBox, 4, 0, 1, 7);
 
         this_over = new QLabel(centralwidget);
         this_over->setObjectName(QStringLiteral("this_over"));
@@ -453,15 +485,10 @@ public:
 
         gridLayout->addWidget(this_over, 1, 1, 1, 6);
 
-        over_text = new QLabel(centralwidget);
-        over_text->setObjectName(QStringLiteral("over_text"));
-
-        gridLayout->addWidget(over_text, 1, 0, 1, 1);
-
         qtlinking->setCentralWidget(centralwidget);
         menubar = new QMenuBar(qtlinking);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 490, 21));
+        menubar->setGeometry(QRect(0, 0, 488, 21));
         qtlinking->setMenuBar(menubar);
         statusbar = new QStatusBar(qtlinking);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -487,12 +514,12 @@ public:
         label_2->setText(QApplication::translate("qtlinking", ".", Q_NULLPTR));
         Balls->setText(QApplication::translate("qtlinking", "0", Q_NULLPTR));
         label_3->setText(QApplication::translate("qtlinking", "overs", Q_NULLPTR));
-        Legal->setTitle(QApplication::translate("qtlinking", "Legal", Q_NULLPTR));
-        LLegal->setText(QApplication::translate("qtlinking", "Legal", Q_NULLPTR));
-        LWide->setText(QApplication::translate("qtlinking", "Wide", Q_NULLPTR));
-        LWide->setShortcut(QApplication::translate("qtlinking", "W", Q_NULLPTR));
-        LNo->setText(QApplication::translate("qtlinking", "No", Q_NULLPTR));
-        LNo->setShortcut(QApplication::translate("qtlinking", "N", Q_NULLPTR));
+        Extra->setTitle(QApplication::translate("qtlinking", "Extra", Q_NULLPTR));
+        EDefault->setText(QApplication::translate("qtlinking", "Default", Q_NULLPTR));
+        ELegbye->setText(QApplication::translate("qtlinking", "Leg bye", Q_NULLPTR));
+        ELegbye->setShortcut(QApplication::translate("qtlinking", "L", Q_NULLPTR));
+        EBye->setText(QApplication::translate("qtlinking", "Bye", Q_NULLPTR));
+        EBye->setShortcut(QApplication::translate("qtlinking", "B", Q_NULLPTR));
         Wicket->setTitle(QApplication::translate("qtlinking", "Wicket", Q_NULLPTR));
         WNotout->setText(QApplication::translate("qtlinking", "Not out", Q_NULLPTR));
         WBowled->setText(QApplication::translate("qtlinking", "Bowled", Q_NULLPTR));
@@ -502,6 +529,19 @@ public:
         WStumped->setText(QApplication::translate("qtlinking", "Stumped", Q_NULLPTR));
         WRunout->setText(QApplication::translate("qtlinking", "Run out", Q_NULLPTR));
         WHitwicket->setText(QApplication::translate("qtlinking", "Hit wicket", Q_NULLPTR));
+        Buttons->setTitle(QString());
+        Next->setText(QApplication::translate("qtlinking", "Next Ball", Q_NULLPTR));
+        Next->setShortcut(QApplication::translate("qtlinking", "Enter", Q_NULLPTR));
+        Reset->setText(QApplication::translate("qtlinking", "Reset", Q_NULLPTR));
+        Reset->setShortcut(QApplication::translate("qtlinking", "R", Q_NULLPTR));
+        Previous->setText(QApplication::translate("qtlinking", "Previous Ball", Q_NULLPTR));
+        Previous->setShortcut(QApplication::translate("qtlinking", "P", Q_NULLPTR));
+        Legal->setTitle(QApplication::translate("qtlinking", "Legal", Q_NULLPTR));
+        LLegal->setText(QApplication::translate("qtlinking", "Legal", Q_NULLPTR));
+        LWide->setText(QApplication::translate("qtlinking", "Wide", Q_NULLPTR));
+        LWide->setShortcut(QApplication::translate("qtlinking", "W", Q_NULLPTR));
+        LNo->setText(QApplication::translate("qtlinking", "No", Q_NULLPTR));
+        LNo->setShortcut(QApplication::translate("qtlinking", "N", Q_NULLPTR));
         Run->setTitle(QApplication::translate("qtlinking", "Run", Q_NULLPTR));
         R0->setText(QApplication::translate("qtlinking", "0", Q_NULLPTR));
         R0->setShortcut(QApplication::translate("qtlinking", "0", Q_NULLPTR));
@@ -517,21 +557,12 @@ public:
         R5->setShortcut(QApplication::translate("qtlinking", "5", Q_NULLPTR));
         R6->setText(QApplication::translate("qtlinking", "6", Q_NULLPTR));
         R6->setShortcut(QApplication::translate("qtlinking", "6", Q_NULLPTR));
-        Extra->setTitle(QApplication::translate("qtlinking", "Extra", Q_NULLPTR));
-        EDefault->setText(QApplication::translate("qtlinking", "Default", Q_NULLPTR));
-        ELegbye->setText(QApplication::translate("qtlinking", "Leg bye", Q_NULLPTR));
-        ELegbye->setShortcut(QApplication::translate("qtlinking", "L", Q_NULLPTR));
-        EBye->setText(QApplication::translate("qtlinking", "Bye", Q_NULLPTR));
-        EBye->setShortcut(QApplication::translate("qtlinking", "B", Q_NULLPTR));
-        Buttons->setTitle(QString());
-        Next->setText(QApplication::translate("qtlinking", "Next Ball", Q_NULLPTR));
-        Next->setShortcut(QApplication::translate("qtlinking", "Enter", Q_NULLPTR));
-        Reset->setText(QApplication::translate("qtlinking", "Reset", Q_NULLPTR));
-        Reset->setShortcut(QApplication::translate("qtlinking", "R", Q_NULLPTR));
-        Previous->setText(QApplication::translate("qtlinking", "Previous Ball", Q_NULLPTR));
-        Previous->setShortcut(QApplication::translate("qtlinking", "P", Q_NULLPTR));
-        this_over->setText(QString());
         over_text->setText(QApplication::translate("qtlinking", "This over:", Q_NULLPTR));
+        groupBox->setTitle(QString());
+        pushButton->setText(QApplication::translate("qtlinking", "Change Bowler", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("qtlinking", "Change Batsman", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("qtlinking", "Rotate Strike", Q_NULLPTR));
+        this_over->setText(QString());
     } // retranslateUi
 
 };
