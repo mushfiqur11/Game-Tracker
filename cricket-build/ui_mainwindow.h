@@ -63,27 +63,11 @@ public:
     QPushButton *Team;
     QWidget *Match;
     QGridLayout *gridLayout_2;
-    QGroupBox *TextBox;
-    QGridLayout *gridLayout;
-    QLabel *TEAM_2;
-    QSpacerItem *horizontalSpacer_6;
-    QLabel *Runs_2;
-    QLabel *label_5;
-    QLabel *Wickets_2;
-    QSpacerItem *horizontalSpacer_7;
-    QLabel *Overs_2;
-    QLabel *label_6;
-    QLabel *Balls_2;
-    QLabel *label_7;
-    QLabel *over_text;
-    QLabel *this_over;
-    QLabel *nameBowl;
-    QLabel *scoreBowl;
-    QLabel *targetScore;
-    QLabel *nameBat1;
-    QLabel *scoreBat1;
     QLabel *nameBat2;
     QLabel *scoreBat2;
+    QLabel *nameBowl;
+    QLabel *nameBat1;
+    QLabel *scoreBat1;
     QGroupBox *groupBox_6;
     QHBoxLayout *horizontalLayout_3;
     QGroupBox *Legal;
@@ -114,7 +98,6 @@ public:
     QPushButton *EDefault_2;
     QPushButton *ELegbye_2;
     QPushButton *EBye_2;
-    QLabel *Target;
     QGroupBox *Buttons;
     QVBoxLayout *verticalLayout_7;
     QPushButton *Next_2;
@@ -125,6 +108,22 @@ public:
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
+    QGroupBox *TextBox;
+    QGridLayout *gridLayout;
+    QLabel *TEAM_2;
+    QSpacerItem *horizontalSpacer_6;
+    QLabel *Runs_2;
+    QLabel *label_5;
+    QLabel *Wickets_2;
+    QSpacerItem *horizontalSpacer_7;
+    QLabel *Overs_2;
+    QLabel *label_6;
+    QLabel *Balls_2;
+    QLabel *label_7;
+    QLabel *over_text;
+    QLabel *this_over;
+    QLabel *scoreBowl;
+    QLabel *targetScore;
     QWidget *createPlayer;
     QVBoxLayout *verticalLayout_9;
     QGroupBox *groupBox_3;
@@ -487,108 +486,25 @@ public:
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        TextBox = new QGroupBox(Match);
-        TextBox->setObjectName(QStringLiteral("TextBox"));
-        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(TextBox->sizePolicy().hasHeightForWidth());
-        TextBox->setSizePolicy(sizePolicy2);
-        TextBox->setMinimumSize(QSize(260, 60));
-        TextBox->setMaximumSize(QSize(260, 16777215));
-        TextBox->setMouseTracking(false);
-        TextBox->setContextMenuPolicy(Qt::CustomContextMenu);
-        TextBox->setStyleSheet(QLatin1String("QLabel{\n"
-"font: 11pt \"MS Shell Dlg 2\";\n"
-"}"));
-        gridLayout = new QGridLayout(TextBox);
-        gridLayout->setSpacing(6);
-        gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        TEAM_2 = new QLabel(TextBox);
-        TEAM_2->setObjectName(QStringLiteral("TEAM_2"));
-        TEAM_2->setMouseTracking(false);
-        TEAM_2->setContextMenuPolicy(Qt::CustomContextMenu);
-
-        gridLayout->addWidget(TEAM_2, 0, 0, 1, 1);
-
-        horizontalSpacer_6 = new QSpacerItem(13, 14, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_6, 0, 1, 1, 2);
-
-        Runs_2 = new QLabel(TextBox);
-        Runs_2->setObjectName(QStringLiteral("Runs_2"));
-        Runs_2->setMouseTracking(false);
-        Runs_2->setContextMenuPolicy(Qt::CustomContextMenu);
-
-        gridLayout->addWidget(Runs_2, 0, 3, 1, 1);
-
-        label_5 = new QLabel(TextBox);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setMouseTracking(false);
-        label_5->setContextMenuPolicy(Qt::CustomContextMenu);
-
-        gridLayout->addWidget(label_5, 0, 4, 1, 1);
-
-        Wickets_2 = new QLabel(TextBox);
-        Wickets_2->setObjectName(QStringLiteral("Wickets_2"));
-        Wickets_2->setMouseTracking(false);
-        Wickets_2->setContextMenuPolicy(Qt::CustomContextMenu);
-
-        gridLayout->addWidget(Wickets_2, 0, 5, 1, 1);
-
-        horizontalSpacer_7 = new QSpacerItem(36, 14, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_7, 0, 6, 1, 1);
-
-        Overs_2 = new QLabel(TextBox);
-        Overs_2->setObjectName(QStringLiteral("Overs_2"));
-        Overs_2->setMouseTracking(false);
-        Overs_2->setContextMenuPolicy(Qt::CustomContextMenu);
-
-        gridLayout->addWidget(Overs_2, 0, 7, 1, 1);
-
-        label_6 = new QLabel(TextBox);
-        label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setMouseTracking(false);
-        label_6->setContextMenuPolicy(Qt::CustomContextMenu);
-
-        gridLayout->addWidget(label_6, 0, 8, 1, 1);
-
-        Balls_2 = new QLabel(TextBox);
-        Balls_2->setObjectName(QStringLiteral("Balls_2"));
-        Balls_2->setMouseTracking(false);
-        Balls_2->setContextMenuPolicy(Qt::CustomContextMenu);
-
-        gridLayout->addWidget(Balls_2, 0, 9, 1, 1);
-
-        label_7 = new QLabel(TextBox);
-        label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setMouseTracking(false);
-        label_7->setContextMenuPolicy(Qt::CustomContextMenu);
-
-        gridLayout->addWidget(label_7, 0, 10, 1, 1);
-
-        over_text = new QLabel(TextBox);
-        over_text->setObjectName(QStringLiteral("over_text"));
-        over_text->setMouseTracking(false);
-        over_text->setContextMenuPolicy(Qt::CustomContextMenu);
-
-        gridLayout->addWidget(over_text, 1, 0, 1, 2);
-
-        this_over = new QLabel(TextBox);
-        this_over->setObjectName(QStringLiteral("this_over"));
-        this_over->setMaximumSize(QSize(472, 35));
-        this_over->setMouseTracking(false);
-        this_over->setContextMenuPolicy(Qt::CustomContextMenu);
-        this_over->setStyleSheet(QLatin1String("QLabel{\n"
-"	text-align: right;\n"
+        nameBat2 = new QLabel(Match);
+        nameBat2->setObjectName(QStringLiteral("nameBat2"));
+        nameBat2->setMinimumSize(QSize(0, 17));
+        nameBat2->setStyleSheet(QLatin1String("QLabel{\n"
+"	\n"
+"	font: 8pt \"MS Shell Dlg 2\";\n"
 "}"));
 
-        gridLayout->addWidget(this_over, 1, 2, 1, 9);
+        gridLayout_2->addWidget(nameBat2, 2, 2, 1, 1);
 
+        scoreBat2 = new QLabel(Match);
+        scoreBat2->setObjectName(QStringLiteral("scoreBat2"));
+        scoreBat2->setMinimumSize(QSize(0, 17));
+        scoreBat2->setStyleSheet(QLatin1String("QLabel{\n"
+"	\n"
+"	font: 8pt \"MS Shell Dlg 2\";\n"
+"}"));
 
-        gridLayout_2->addWidget(TextBox, 0, 0, 1, 5);
+        gridLayout_2->addWidget(scoreBat2, 2, 3, 1, 1);
 
         nameBowl = new QLabel(Match);
         nameBowl->setObjectName(QStringLiteral("nameBowl"));
@@ -600,22 +516,6 @@ public:
 
         gridLayout_2->addWidget(nameBowl, 1, 0, 1, 1);
 
-        scoreBowl = new QLabel(Match);
-        scoreBowl->setObjectName(QStringLiteral("scoreBowl"));
-        scoreBowl->setMinimumSize(QSize(0, 17));
-        scoreBowl->setStyleSheet(QLatin1String("QLabel{\n"
-"	\n"
-"	font: 8pt \"MS Shell Dlg 2\";\n"
-"}"));
-
-        gridLayout_2->addWidget(scoreBowl, 1, 2, 1, 1);
-
-        targetScore = new QLabel(Match);
-        targetScore->setObjectName(QStringLiteral("targetScore"));
-        targetScore->setMinimumSize(QSize(50, 17));
-
-        gridLayout_2->addWidget(targetScore, 1, 3, 1, 2);
-
         nameBat1 = new QLabel(Match);
         nameBat1->setObjectName(QStringLiteral("nameBat1"));
         nameBat1->setMinimumSize(QSize(0, 17));
@@ -624,7 +524,7 @@ public:
 "	font: 8pt \"MS Shell Dlg 2\";\n"
 "}"));
 
-        gridLayout_2->addWidget(nameBat1, 2, 0, 1, 2);
+        gridLayout_2->addWidget(nameBat1, 2, 0, 1, 1);
 
         scoreBat1 = new QLabel(Match);
         scoreBat1->setObjectName(QStringLiteral("scoreBat1"));
@@ -634,27 +534,7 @@ public:
 "	font: 8pt \"MS Shell Dlg 2\";\n"
 "}"));
 
-        gridLayout_2->addWidget(scoreBat1, 2, 2, 1, 1);
-
-        nameBat2 = new QLabel(Match);
-        nameBat2->setObjectName(QStringLiteral("nameBat2"));
-        nameBat2->setMinimumSize(QSize(0, 17));
-        nameBat2->setStyleSheet(QLatin1String("QLabel{\n"
-"	\n"
-"	font: 8pt \"MS Shell Dlg 2\";\n"
-"}"));
-
-        gridLayout_2->addWidget(nameBat2, 2, 3, 1, 1);
-
-        scoreBat2 = new QLabel(Match);
-        scoreBat2->setObjectName(QStringLiteral("scoreBat2"));
-        scoreBat2->setMinimumSize(QSize(0, 17));
-        scoreBat2->setStyleSheet(QLatin1String("QLabel{\n"
-"	\n"
-"	font: 8pt \"MS Shell Dlg 2\";\n"
-"}"));
-
-        gridLayout_2->addWidget(scoreBat2, 2, 4, 1, 1);
+        gridLayout_2->addWidget(scoreBat1, 2, 1, 1, 1);
 
         groupBox_6 = new QGroupBox(Match);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
@@ -671,11 +551,11 @@ public:
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         Legal = new QGroupBox(groupBox_6);
         Legal->setObjectName(QStringLiteral("Legal"));
-        QSizePolicy sizePolicy3(QSizePolicy::Fixed, QSizePolicy::Minimum);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(Legal->sizePolicy().hasHeightForWidth());
-        Legal->setSizePolicy(sizePolicy3);
+        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Minimum);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(Legal->sizePolicy().hasHeightForWidth());
+        Legal->setSizePolicy(sizePolicy2);
         Legal->setMinimumSize(QSize(33, 130));
         Legal->setMouseTracking(false);
         Legal->setFocusPolicy(Qt::NoFocus);
@@ -734,8 +614,8 @@ public:
 
         Wicket = new QGroupBox(groupBox_6);
         Wicket->setObjectName(QStringLiteral("Wicket"));
-        sizePolicy3.setHeightForWidth(Wicket->sizePolicy().hasHeightForWidth());
-        Wicket->setSizePolicy(sizePolicy3);
+        sizePolicy2.setHeightForWidth(Wicket->sizePolicy().hasHeightForWidth());
+        Wicket->setSizePolicy(sizePolicy2);
         Wicket->setMinimumSize(QSize(37, 130));
         Wicket->setMouseTracking(false);
         Wicket->setFocusPolicy(Qt::NoFocus);
@@ -845,8 +725,8 @@ public:
 
         Run = new QGroupBox(groupBox_6);
         Run->setObjectName(QStringLiteral("Run"));
-        sizePolicy3.setHeightForWidth(Run->sizePolicy().hasHeightForWidth());
-        Run->setSizePolicy(sizePolicy3);
+        sizePolicy2.setHeightForWidth(Run->sizePolicy().hasHeightForWidth());
+        Run->setSizePolicy(sizePolicy2);
         Run->setMinimumSize(QSize(23, 130));
         Run->setMouseTracking(false);
         Run->setFocusPolicy(Qt::NoFocus);
@@ -959,8 +839,8 @@ public:
 
         Extra = new QGroupBox(groupBox_6);
         Extra->setObjectName(QStringLiteral("Extra"));
-        sizePolicy3.setHeightForWidth(Extra->sizePolicy().hasHeightForWidth());
-        Extra->setSizePolicy(sizePolicy3);
+        sizePolicy2.setHeightForWidth(Extra->sizePolicy().hasHeightForWidth());
+        Extra->setSizePolicy(sizePolicy2);
         Extra->setMinimumSize(QSize(37, 130));
         Extra->setMouseTracking(false);
         Extra->setFocusPolicy(Qt::NoFocus);
@@ -1022,17 +902,12 @@ public:
         horizontalLayout_3->addWidget(Extra);
 
 
-        gridLayout_2->addWidget(groupBox_6, 3, 0, 2, 5);
-
-        Target = new QLabel(Match);
-        Target->setObjectName(QStringLiteral("Target"));
-
-        gridLayout_2->addWidget(Target, 4, 1, 1, 1);
+        gridLayout_2->addWidget(groupBox_6, 3, 0, 1, 4);
 
         Buttons = new QGroupBox(Match);
         Buttons->setObjectName(QStringLiteral("Buttons"));
-        sizePolicy3.setHeightForWidth(Buttons->sizePolicy().hasHeightForWidth());
-        Buttons->setSizePolicy(sizePolicy3);
+        sizePolicy2.setHeightForWidth(Buttons->sizePolicy().hasHeightForWidth());
+        Buttons->setSizePolicy(sizePolicy2);
         Buttons->setMinimumSize(QSize(260, 70));
         Buttons->setMaximumSize(QSize(260, 70));
         Buttons->setMouseTracking(false);
@@ -1069,12 +944,15 @@ public:
         verticalLayout_7->addWidget(Previous_2);
 
 
-        gridLayout_2->addWidget(Buttons, 5, 0, 1, 5);
+        gridLayout_2->addWidget(Buttons, 4, 0, 1, 4);
 
         groupBox_2 = new QGroupBox(Match);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        sizePolicy2.setHeightForWidth(groupBox_2->sizePolicy().hasHeightForWidth());
-        groupBox_2->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy3(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(groupBox_2->sizePolicy().hasHeightForWidth());
+        groupBox_2->setSizePolicy(sizePolicy3);
         groupBox_2->setMinimumSize(QSize(260, 30));
         groupBox_2->setMouseTracking(false);
         groupBox_2->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -1108,11 +986,140 @@ public:
         horizontalLayout_2->addWidget(pushButton_6);
 
 
-        gridLayout_2->addWidget(groupBox_2, 6, 0, 1, 5);
+        gridLayout_2->addWidget(groupBox_2, 5, 0, 1, 4);
+
+        TextBox = new QGroupBox(Match);
+        TextBox->setObjectName(QStringLiteral("TextBox"));
+        sizePolicy3.setHeightForWidth(TextBox->sizePolicy().hasHeightForWidth());
+        TextBox->setSizePolicy(sizePolicy3);
+        TextBox->setMinimumSize(QSize(260, 60));
+        TextBox->setMaximumSize(QSize(260, 16777215));
+        TextBox->setMouseTracking(false);
+        TextBox->setContextMenuPolicy(Qt::CustomContextMenu);
+        TextBox->setStyleSheet(QLatin1String("QLabel{\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
+"}"));
+        gridLayout = new QGridLayout(TextBox);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        TEAM_2 = new QLabel(TextBox);
+        TEAM_2->setObjectName(QStringLiteral("TEAM_2"));
+        TEAM_2->setMouseTracking(false);
+        TEAM_2->setContextMenuPolicy(Qt::CustomContextMenu);
+
+        gridLayout->addWidget(TEAM_2, 0, 0, 1, 1);
+
+        horizontalSpacer_6 = new QSpacerItem(13, 14, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_6, 0, 1, 1, 2);
+
+        Runs_2 = new QLabel(TextBox);
+        Runs_2->setObjectName(QStringLiteral("Runs_2"));
+        Runs_2->setMouseTracking(false);
+        Runs_2->setContextMenuPolicy(Qt::CustomContextMenu);
+
+        gridLayout->addWidget(Runs_2, 0, 3, 1, 1);
+
+        label_5 = new QLabel(TextBox);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setMouseTracking(false);
+        label_5->setContextMenuPolicy(Qt::CustomContextMenu);
+
+        gridLayout->addWidget(label_5, 0, 4, 1, 1);
+
+        Wickets_2 = new QLabel(TextBox);
+        Wickets_2->setObjectName(QStringLiteral("Wickets_2"));
+        Wickets_2->setMouseTracking(false);
+        Wickets_2->setContextMenuPolicy(Qt::CustomContextMenu);
+
+        gridLayout->addWidget(Wickets_2, 0, 5, 1, 1);
+
+        horizontalSpacer_7 = new QSpacerItem(36, 14, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_7, 0, 6, 1, 1);
+
+        Overs_2 = new QLabel(TextBox);
+        Overs_2->setObjectName(QStringLiteral("Overs_2"));
+        Overs_2->setMouseTracking(false);
+        Overs_2->setContextMenuPolicy(Qt::CustomContextMenu);
+
+        gridLayout->addWidget(Overs_2, 0, 7, 1, 1);
+
+        label_6 = new QLabel(TextBox);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setMouseTracking(false);
+        label_6->setContextMenuPolicy(Qt::CustomContextMenu);
+
+        gridLayout->addWidget(label_6, 0, 8, 1, 1);
+
+        Balls_2 = new QLabel(TextBox);
+        Balls_2->setObjectName(QStringLiteral("Balls_2"));
+        Balls_2->setMouseTracking(false);
+        Balls_2->setContextMenuPolicy(Qt::CustomContextMenu);
+
+        gridLayout->addWidget(Balls_2, 0, 9, 1, 1);
+
+        label_7 = new QLabel(TextBox);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setMouseTracking(false);
+        label_7->setContextMenuPolicy(Qt::CustomContextMenu);
+
+        gridLayout->addWidget(label_7, 0, 10, 1, 1);
+
+        over_text = new QLabel(TextBox);
+        over_text->setObjectName(QStringLiteral("over_text"));
+        over_text->setMouseTracking(false);
+        over_text->setContextMenuPolicy(Qt::CustomContextMenu);
+
+        gridLayout->addWidget(over_text, 1, 0, 1, 2);
+
+        this_over = new QLabel(TextBox);
+        this_over->setObjectName(QStringLiteral("this_over"));
+        this_over->setMaximumSize(QSize(472, 35));
+        this_over->setMouseTracking(false);
+        this_over->setContextMenuPolicy(Qt::CustomContextMenu);
+        this_over->setStyleSheet(QLatin1String("QLabel{\n"
+"	text-align: right;\n"
+"}"));
+
+        gridLayout->addWidget(this_over, 1, 2, 1, 9);
+
+
+        gridLayout_2->addWidget(TextBox, 0, 0, 1, 4);
+
+        scoreBowl = new QLabel(Match);
+        scoreBowl->setObjectName(QStringLiteral("scoreBowl"));
+        scoreBowl->setMinimumSize(QSize(65, 17));
+        scoreBowl->setStyleSheet(QLatin1String("QLabel{\n"
+"	\n"
+"	font: 8pt \"MS Shell Dlg 2\";\n"
+"}"));
+
+        gridLayout_2->addWidget(scoreBowl, 1, 1, 1, 2);
+
+        targetScore = new QLabel(Match);
+        targetScore->setObjectName(QStringLiteral("targetScore"));
+        targetScore->setMinimumSize(QSize(75, 17));
+        targetScore->setStyleSheet(QLatin1String("QLabel{\n"
+"	\n"
+"	font: 8pt \"MS Shell Dlg 2\";\n"
+"}"));
+
+        gridLayout_2->addWidget(targetScore, 1, 3, 1, 1);
 
         tabWidget->addTab(Match, QString());
+        nameBowl->raise();
+        scoreBowl->raise();
+        targetScore->raise();
+        nameBat1->raise();
+        scoreBat1->raise();
+        nameBat2->raise();
+        scoreBat2->raise();
+        Buttons->raise();
+        groupBox_2->raise();
         groupBox_6->raise();
-        Target->raise();
+        TextBox->raise();
         createPlayer = new QWidget();
         createPlayer->setObjectName(QStringLiteral("createPlayer"));
         createPlayer->setStyleSheet(QLatin1String("QMainWindow{\n"
@@ -1626,7 +1633,7 @@ public:
         overLimit = new QSpinBox(groupBox_5);
         overLimit->setObjectName(QStringLiteral("overLimit"));
         overLimit->setMinimumSize(QSize(0, 18));
-        overLimit->setMinimum(5);
+        overLimit->setMinimum(1);
         overLimit->setMaximum(50);
 
         horizontalLayout_29->addWidget(overLimit);
@@ -1740,24 +1747,11 @@ public:
         Player->setText(QApplication::translate("MainWindow", "Create Player", Q_NULLPTR));
         Team->setText(QApplication::translate("MainWindow", "Create Team", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Main", Q_NULLPTR));
-        TextBox->setTitle(QString());
-        TEAM_2->setText(QApplication::translate("MainWindow", "Team 1", Q_NULLPTR));
-        Runs_2->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
-        label_5->setText(QApplication::translate("MainWindow", "/", Q_NULLPTR));
-        Wickets_2->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
-        Overs_2->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
-        label_6->setText(QApplication::translate("MainWindow", ".", Q_NULLPTR));
-        Balls_2->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
-        label_7->setText(QApplication::translate("MainWindow", "overs", Q_NULLPTR));
-        over_text->setText(QApplication::translate("MainWindow", "This over:", Q_NULLPTR));
-        this_over->setText(QString());
-        nameBowl->setText(QApplication::translate("MainWindow", "Bowler:", Q_NULLPTR));
-        scoreBowl->setText(QApplication::translate("MainWindow", "Bowling figure", Q_NULLPTR));
-        targetScore->setText(QString());
-        nameBat1->setText(QApplication::translate("MainWindow", "Batsman 1:", Q_NULLPTR));
-        scoreBat1->setText(QApplication::translate("MainWindow", "Score", Q_NULLPTR));
         nameBat2->setText(QApplication::translate("MainWindow", "Batsman 2:", Q_NULLPTR));
         scoreBat2->setText(QApplication::translate("MainWindow", "Score", Q_NULLPTR));
+        nameBowl->setText(QApplication::translate("MainWindow", "Bowler:", Q_NULLPTR));
+        nameBat1->setText(QApplication::translate("MainWindow", "Batsman 1:", Q_NULLPTR));
+        scoreBat1->setText(QApplication::translate("MainWindow", "Score", Q_NULLPTR));
         groupBox_6->setTitle(QString());
         Legal->setTitle(QApplication::translate("MainWindow", "Legal", Q_NULLPTR));
         LLegal_2->setText(QApplication::translate("MainWindow", "Legal", Q_NULLPTR));
@@ -1795,7 +1789,6 @@ public:
         ELegbye_2->setShortcut(QApplication::translate("MainWindow", "L", Q_NULLPTR));
         EBye_2->setText(QApplication::translate("MainWindow", "Bye", Q_NULLPTR));
         EBye_2->setShortcut(QApplication::translate("MainWindow", "B", Q_NULLPTR));
-        Target->setText(QString());
         Buttons->setTitle(QString());
         Next_2->setText(QApplication::translate("MainWindow", "Next Ball", Q_NULLPTR));
         Next_2->setShortcut(QApplication::translate("MainWindow", "Enter", Q_NULLPTR));
@@ -1807,6 +1800,19 @@ public:
         pushButton_4->setText(QApplication::translate("MainWindow", "Change Bowler", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("MainWindow", "Change Batsman", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("MainWindow", "Rotate Strike", Q_NULLPTR));
+        TextBox->setTitle(QString());
+        TEAM_2->setText(QApplication::translate("MainWindow", "Team 1", Q_NULLPTR));
+        Runs_2->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
+        label_5->setText(QApplication::translate("MainWindow", "/", Q_NULLPTR));
+        Wickets_2->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
+        Overs_2->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
+        label_6->setText(QApplication::translate("MainWindow", ".", Q_NULLPTR));
+        Balls_2->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
+        label_7->setText(QApplication::translate("MainWindow", "overs", Q_NULLPTR));
+        over_text->setText(QApplication::translate("MainWindow", "This over:", Q_NULLPTR));
+        this_over->setText(QString());
+        scoreBowl->setText(QApplication::translate("MainWindow", "Bowling figure", Q_NULLPTR));
+        targetScore->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(Match), QApplication::translate("MainWindow", "Match", Q_NULLPTR));
         groupBox_3->setTitle(QApplication::translate("MainWindow", "Player Info", Q_NULLPTR));
         label_9->setText(QApplication::translate("MainWindow", "First Name:", Q_NULLPTR));
