@@ -7,6 +7,7 @@ Members:
   Azmaeen Bin Ansar (160041030)
   Kazi Raiyan Mahmud (160041058)
   Md. Shoumik Raihan (160041071)
+  Mashrur Nazrul Mashfi (160041003)
 
 This software keeps track of a cricket match. 
 The live scorecard of the match is available to anyone in the same network.
